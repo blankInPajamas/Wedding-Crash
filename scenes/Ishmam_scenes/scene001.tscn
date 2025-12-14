@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://itollvglabwu"]
+
+[ext_resource type="PackedScene" uid="uid://bdj82l0e082yt" path="res://scenes/character/dummy_guy_01.tscn" id="1_7vfua"]
+[ext_resource type="Script" uid="uid://bmfu53lyj448h" path="res://scripts/Ishmam/scene_001.gd" id="1_bcx4s"]
+[ext_resource type="PackedScene" uid="uid://c3my51g4up2c6" path="res://scenes/ui_box.tscn" id="2_lhqm4"]
+
+[node name="Scene001" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bcx4s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DummyGuy01" parent="CanvasLayer" instance=ExtResource("1_7vfua")]
+position = Vector2(967, 689)
+
+[node name="UIBox" parent="." instance=ExtResource("2_lhqm4")]

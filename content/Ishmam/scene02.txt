@@ -1,0 +1,93 @@
+# KFC MeetUp at Tong
+
+[Rehan]
+Kiyo boss, how you doing?
+
+[Hamza]
+Eito brother, been living life as usual!
+Hotat tomar mathai crash korar bhoot chaplo?
+
+[Rehan]
+Are, December pura shesh hoye jacche!
+I haven't attended a single wedding eibar. 
+Last bar, eto gulon wedding attend korlam amra. 
+Yet, ebar obostha dekho? 
+Ekta wedding er o invite pelam na!
+
+[Hamza]
+Ahareeee!
+
+[Rehan]
+Tai, bhabtesi ekta crash merei dekhi na keno! 
+Kiyo miya, jaba naki?
+
+[Hamza]
+Bola lage naki bro, I'm always down!
+But bro, khali amrai jacchi?
+Ishmam ke bolba na?
+
+[Rehan]
+Oi to arek badbuzz! Bhitur dim!
+Jaite to chabe na.
+
+[Hamza]
+True! 
+Ki ek relative er wedding e khabar short porsilo bole or bhoi dhuke boshe ase.
+
+[Rehan]
+Ho baal!
+
+[Hamza]
+Kintu ore chara jawa tao to thik hobe na bro...
+
+[Both Hamza and Rehan]
+...sighs...
+
+? What should they do?
+> Should they crash a wedding? | crash_yes
+> Or not? | crash_no
+
+# Label crash_yes
+[Hamza]
+I think, I have an idea...
+
+[Rehan]
+(while smoking) Ki bro?
+
+[Hamza]
+Oke call diye bolo tomar kono boro bhai er biye and tomar dawat ase. 
+They asked you to tag along his friends to help out with the management.
+
+[Rehan]
+Tomar mone hoi o manbe?
+
+[Hamza]
+Try korte to dosh nai, right?
+
+[Rehan]
+Hmm....
+Accha, let's give him a call.
+
+
+...ringing...ringing...ringing...
+
+[Ishmam]
+Kisseh bol.
+
+[Rehan]
+Koi tui?
+
+[Ishmam]
+Bashai thakmu ar koi?
+
+[Rehan]
+Ajker plan ki tor? Raatre free asos ni?
+
+[Ishmam]
+Ho asi, ken tor ki?
+
+[Rehan]
+Are kaam ase dekhei to call disi.
+Accha shun...
+
+

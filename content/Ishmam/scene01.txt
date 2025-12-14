@@ -1,0 +1,32 @@
+# Starting scene
+
+[Rehan]
+December to eshe porlo, kintu ekta wedding eo gelam na. 
+Ah man… bhallagtesena. 
+Well, amar ki ekta crash deoya uchit?
+
+? Should I crash a wedding?
+> Yes | yes_storyline
+> No | no_storyline
+
+# Label yes_storyline
+[Rehan]
+Hmm…. etai kora uchit.
+Eka jete to moja nei. 
+Let me call Hamza!
+
+[Rehan]
+*ringing*
+
+[Hamza]
+Hello boss, hae bolo.
+
+[Rehan]
+Miya, December shesh hoye jacche and we still haven’t attended a wedding!
+Asho, ajke ekta crash dei!
+Free aso ajke?
+
+[Hamza]
+Miyaaaaa, eta bolar kichu hoilo?
+Asho miya. 
+Age dekhi kori cholo miya.

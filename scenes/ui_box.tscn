@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3my51g4up2c6"]
+
+[ext_resource type="Script" uid="uid://4mxil4w405x5" path="res://scripts/ui_box.gd" id="1_0vf61"]
+[ext_resource type="FontFile" uid="uid://b4ybigsfc2cii" path="res://fonts/ace_attorney/Ace-Attorney.ttf" id="1_643fp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60bku"]
+bg_color = Color(0.12941177, 0.12941177, 0.12941177, 0.7058824)
+border_width_top = 2
+border_color = Color(0.21568628, 0.42352942, 0.85490197, 0.7058824)
+
+[sub_resource type="Theme" id="Theme_643fp"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_60bku")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vf61"]
+content_margin_left = 100.0
+content_margin_top = 50.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_643fp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cowe"]
+font = ExtResource("1_643fp")
+font_size = 100
+outline_size = 2
+
+[node name="UIBox" type="CanvasLayer"]
+script = ExtResource("1_0vf61")
+
+[node name="DialogBox" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1920, 300)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -300.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_643fp")
+
+[node name="Dialogue_label" type="RichTextLabel" parent="DialogBox"]
+custom_minimum_size = Vector2(1750, 250)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_643fp")
+theme_override_font_sizes/normal_font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_0vf61")
+bbcode_enabled = true
+text = "[wave]This is a line of dialogue[/wave] ."
+
+[node name="SpeakerBox" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(500, 70)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -399.0
+offset_right = 500.0
+offset_bottom = -329.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_643fp")
+
+[node name="Polygon2D" type="Polygon2D" parent="SpeakerBox"]
+color = Color(0.21568628, 0.42352942, 0.85490197, 0.7058824)
+offset = Vector2(0, -20)
+polygon = PackedVector2Array(0, 0, 460, 0, 500, 120, 0, 120)
+
+[node name="Control" type="Control" parent="SpeakerBox"]
+layout_mode = 2
+
+[node name="Speaker_name" type="Label" parent="SpeakerBox/Control"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -39.0
+offset_right = 109.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Rehan"
+label_settings = SubResource("LabelSettings_0cowe")
+horizontal_alignment = 1
+
+[node name="AnchorPoint" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="AnchorPoint"]
+position = Vector2(-55, -48)
+polygon = PackedVector2Array(0, 0, 50, 25, 0, 50)
