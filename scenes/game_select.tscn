@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3uv853d1w1tv"]
+[gd_scene load_steps=7 format=3 uid="uid://b3uv853d1w1tv"]
 
 [ext_resource type="FontFile" uid="uid://b4ybigsfc2cii" path="res://fonts/ace_attorney/Ace-Attorney.ttf" id="1_8y7ss"]
 [ext_resource type="Script" uid="uid://deng0ab0l5g68" path="res://scripts/game_select.gd" id="1_l217c"]
@@ -13,6 +13,22 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l217c"]
+content_margin_left = 40.0
+content_margin_top = 15.0
+content_margin_right = 40.0
+content_margin_bottom = 15.0
+bg_color = Color(0.25323758, 0.2532376, 0.2532375, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="Theme" id="Theme_flrbm"]
+Button/font_sizes/font_size = 45
+Button/fonts/font = ExtResource("1_8y7ss")
+Button/styles/normal = SubResource("StyleBoxFlat_l217c")
 
 [node name="Game_select" type="Control"]
 layout_mode = 3
@@ -79,5 +95,15 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_flrbm")
 text = "Ishmam"
 
+[node name="Back-btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 57.0
+offset_right = 231.0
+offset_bottom = 130.0
+theme = SubResource("Theme_flrbm")
+text = "Back"
+
 [connection signal="pressed" from="HBoxContainer/Afroza" to="." method="_on_afroza_pressed"]
 [connection signal="pressed" from="HBoxContainer/Ishmam" to="." method="_on_ishmam_pressed"]
+[connection signal="pressed" from="Back-btn" to="." method="_on_backbtn_pressed"]

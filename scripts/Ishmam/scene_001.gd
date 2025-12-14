@@ -1,6 +1,6 @@
 extends Control
 
-@onready var ui_box: CanvasLayer = $UIBox
+@onready var ui_box: CanvasLayer = $CanvasLayer/UIBox
 var content_location: String = "res://content/Ishmam/scene01.txt"
 
 # Called when the node enters the scene tree for the first time.

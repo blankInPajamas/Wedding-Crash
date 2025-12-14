@@ -23,6 +23,6 @@ color = Color(0, 0, 0, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DummyGuy01" parent="CanvasLayer" instance=ExtResource("1_7vfua")]
-position = Vector2(967, 689)
+position = Vector2(965, 680)
 
-[node name="UIBox" parent="." instance=ExtResource("2_lhqm4")]
+[node name="UIBox" parent="CanvasLayer" instance=ExtResource("2_lhqm4")]

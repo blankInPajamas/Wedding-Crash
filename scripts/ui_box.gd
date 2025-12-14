@@ -13,6 +13,13 @@ func _set_dialogue_values(speaker: String, dialogue_list: Array) -> void:
 func open_file(location: String) -> void:
 	var file = FileAccess.open(location, FileAccess.READ)
 	
+	if file:
+		var content := file.get_as_text()
+		file.close()
+		print(content)
+	else:
+		print("Failed to open file")
+		
 	var scenes: Dictionary = {}
 	var current_speaker: String = ""
 	var current_scene := ""
@@ -27,11 +34,13 @@ func open_file(location: String) -> void:
 			current_speaker = name
 			print(current_speaker)
 			continue
-		
-		
+			
+		if line.begins_with("#"):
+			current_scene = line.replace("#","").strip_edges()
+			scenes[current_scene] = []
+			continue
 		
 	file.close()
-	#print(content)
 	
 
 func _ready() -> void:
