@@ -6,6 +6,7 @@ var content_location: String = "res://content/Ishmam/scene01.txt"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ui_box.open_file(content_location)
+	ui_box.start_scene("Starting scene")
 	pass # Replace with function body.
 
 

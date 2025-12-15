@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3my51g4up2c6"]
+[gd_scene load_steps=12 format=3 uid="uid://c3my51g4up2c6"]
 
 [ext_resource type="Script" uid="uid://4mxil4w405x5" path="res://scripts/ui_box.gd" id="1_0vf61"]
 [ext_resource type="FontFile" uid="uid://b4ybigsfc2cii" path="res://fonts/ace_attorney/Ace-Attorney.ttf" id="1_643fp"]
@@ -24,11 +24,46 @@ font = ExtResource("1_643fp")
 font_size = 100
 outline_size = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cowe"]
+bg_color = Color(0.15294118, 0.15294118, 0.15294118, 0.7058824)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_0vf61"]
+font = ExtResource("1_643fp")
+font_size = 130
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thl3s"]
+content_margin_left = 40.0
+content_margin_top = 10.0
+content_margin_right = 40.0
+content_margin_bottom = 10.0
+bg_color = Color(0.15294118, 0.15294118, 0.15294118, 0.78431374)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="Theme" id="Theme_1s64n"]
+default_font = ExtResource("1_643fp")
+Button/font_sizes/font_size = 50
+Button/styles/normal = SubResource("StyleBoxFlat_thl3s")
+
 [node name="UIBox" type="CanvasLayer"]
 script = ExtResource("1_0vf61")
 
-[node name="DialogBox" type="PanelContainer" parent="."]
+[node name="DialogueArea" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialogBox" type="PanelContainer" parent="DialogueArea"]
 custom_minimum_size = Vector2(1920, 300)
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -41,7 +76,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_643fp")
 
-[node name="Dialogue_label" type="RichTextLabel" parent="DialogBox"]
+[node name="Dialogue_label" type="RichTextLabel" parent="DialogueArea/DialogBox"]
 custom_minimum_size = Vector2(1750, 250)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_643fp")
@@ -50,8 +85,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0vf61")
 bbcode_enabled = true
 text = "[wave]This is a line of dialogue[/wave] ."
 
-[node name="SpeakerBox" type="PanelContainer" parent="."]
+[node name="SpeakerBox" type="PanelContainer" parent="DialogueArea"]
 custom_minimum_size = Vector2(500, 70)
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -61,15 +97,15 @@ offset_bottom = -329.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_643fp")
 
-[node name="Polygon2D" type="Polygon2D" parent="SpeakerBox"]
+[node name="Polygon2D" type="Polygon2D" parent="DialogueArea/SpeakerBox"]
 color = Color(0.21568628, 0.42352942, 0.85490197, 0.7058824)
 offset = Vector2(0, -20)
 polygon = PackedVector2Array(0, 0, 460, 0, 500, 120, 0, 120)
 
-[node name="Control" type="Control" parent="SpeakerBox"]
+[node name="Control" type="Control" parent="DialogueArea/SpeakerBox"]
 layout_mode = 2
 
-[node name="Speaker_name" type="Label" parent="SpeakerBox/Control"]
+[node name="Speaker_name" type="Label" parent="DialogueArea/SpeakerBox/Control"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -88,8 +124,8 @@ text = "Rehan"
 label_settings = SubResource("LabelSettings_0cowe")
 horizontal_alignment = 1
 
-[node name="AnchorPoint" type="Control" parent="."]
-layout_mode = 3
+[node name="AnchorPoint" type="Control" parent="DialogueArea"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -100,6 +136,69 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Polygon2D" type="Polygon2D" parent="AnchorPoint"]
+[node name="Polygon2D" type="Polygon2D" parent="DialogueArea/AnchorPoint"]
 position = Vector2(-55, -48)
 polygon = PackedVector2Array(0, 0, 50, 25, 0, 50)
+
+[node name="ChoiceArea" type="Control" parent="."]
+visible = false
+custom_minimum_size = Vector2(1500, 900)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ChoiceArea"]
+custom_minimum_size = Vector2(1500, 900)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cowe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChoiceArea/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Question" type="Label" parent="ChoiceArea/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_643fp")
+theme_override_font_sizes/font_size = 160
+text = "Testing testing question"
+label_settings = SubResource("LabelSettings_0vf61")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChoiceArea/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Choice01" type="Button" parent="ChoiceArea/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1s64n")
+text = "Choice 1"
+
+[node name="Choice02" type="Button" parent="ChoiceArea/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1s64n")
+text = "Choice 2"
