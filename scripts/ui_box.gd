@@ -1,11 +1,10 @@
 extends CanvasLayer
 
-@onready var dialogue: RichTextLabel = $DialogueArea/DialogBox/Dialogue_label
+@onready var choice_question: Label = $ChoiceArea/PanelContainer/VBoxContainer/Question
 @onready var speaker_name: Label = $DialogueArea/SpeakerBox/Control/Speaker_name
+@onready var dialogue: RichTextLabel = $DialogueArea/DialogBox/Dialogue_label
 @onready var dialogue_area: Control = $DialogueArea
 @onready var choice_area: Control = $ChoiceArea
-
-@onready var choice_question: Label = $ChoiceArea/PanelContainer/VBoxContainer/Question
 
 @onready var choice_01: Button = $ChoiceArea/PanelContainer/VBoxContainer/HBoxContainer/Choice01
 @onready var choice_02: Button = $ChoiceArea/PanelContainer/VBoxContainer/HBoxContainer/Choice02

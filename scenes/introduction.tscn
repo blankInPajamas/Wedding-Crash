@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cng61nc886rms"]
+[gd_scene load_steps=7 format=3 uid="uid://cng61nc886rms"]
 
 [ext_resource type="FontFile" uid="uid://b4ybigsfc2cii" path="res://fonts/ace_attorney/Ace-Attorney.ttf" id="1_fiwxd"]
 [ext_resource type="Script" uid="uid://dyto0ucsbkvav" path="res://scripts/intro.gd" id="1_tgans"]
+[ext_resource type="AudioStream" uid="uid://b3jhb7wouh65l" path="res://assets/moosic/intro.mp3" id="3_e3kje"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tgans"]
 font = ExtResource("1_fiwxd")
@@ -46,6 +47,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Wedding Crash"
 label_settings = SubResource("LabelSettings_tgans")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Detail" type="Label" parent="."]
 layout_mode = 1
@@ -62,10 +65,10 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "A game where you crash a wedding with your friends
 
-By
 Afroza x BoyInPajamas	"
 label_settings = SubResource("LabelSettings_e3kje")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Instruction" type="Label" parent="."]
 layout_mode = 1
@@ -83,3 +86,8 @@ grow_vertical = 2
 text = "Press Anywhere to Start"
 label_settings = SubResource("LabelSettings_nvvsg")
 horizontal_alignment = 1
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_e3kje")
+autoplay = true
+parameters/looping = true

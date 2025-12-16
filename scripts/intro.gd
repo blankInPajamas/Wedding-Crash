@@ -1,11 +1,13 @@
 extends Control
 
 var isTimeout: bool = false
+@onready var bgm: AudioStreamPlayer = $bgm
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().create_timer(0.25).timeout
 	isTimeout = true
+	bgm.play()
 
 func _input(event) -> void:
 	#print(event)
