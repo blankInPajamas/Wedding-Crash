@@ -5,6 +5,6 @@
 [node name="DummyGuy01" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -1)
+position = Vector2(975, 633)
 scale = Vector2(1.3885542, 1.3885542)
 texture = ExtResource("1_antc1")

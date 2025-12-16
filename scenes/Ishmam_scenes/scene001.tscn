@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://itollvglabwu"]
+[gd_scene load_steps=5 format=3 uid="uid://itollvglabwu"]
 
 [ext_resource type="PackedScene" uid="uid://bdj82l0e082yt" path="res://scenes/character/rehan.tscn" id="1_7vfua"]
 [ext_resource type="Script" uid="uid://bmfu53lyj448h" path="res://scripts/Ishmam/scene_001.gd" id="1_bcx4s"]
 [ext_resource type="PackedScene" uid="uid://c3my51g4up2c6" path="res://scenes/ui_box.tscn" id="2_lhqm4"]
+[ext_resource type="Texture2D" uid="uid://bxsqr3am78f1l" path="res://assets/background/bg001.jpg" id="4_x76ju"]
 
 [node name="Scene001" type="Control"]
 layout_mode = 3
@@ -14,15 +15,27 @@ grow_vertical = 2
 script = ExtResource("1_bcx4s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 0, 0, 1)
 
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_x76ju")
+stretch_mode = 5
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DummyGuy01" parent="CanvasLayer" instance=ExtResource("1_7vfua")]
+visible = false
 position = Vector2(965, 680)
+
+[node name="CharacterContainer" type="Node2D" parent="CanvasLayer"]
 
 [node name="UIBox" parent="CanvasLayer" instance=ExtResource("2_lhqm4")]

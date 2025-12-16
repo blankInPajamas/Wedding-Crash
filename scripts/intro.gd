@@ -7,7 +7,8 @@ var isTimeout: bool = false
 func _ready() -> void:
 	await get_tree().create_timer(0.25).timeout
 	isTimeout = true
-	bgm.play()
+	#bgm.play()
+	#bgm.volume_db = -10
 
 func _input(event) -> void:
 	#print(event)
@@ -15,7 +16,6 @@ func _input(event) -> void:
 	if (event is InputEventMouseButton and event.is_pressed()) or (event is InputEventScreenTouch and event.is_pressed()) :
 		get_tree().change_scene_to_file("res://scenes/game_select.tscn")
 		#print("Works")
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

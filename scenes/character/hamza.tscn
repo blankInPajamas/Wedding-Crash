@@ -5,5 +5,7 @@
 [node name="Hamza" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(974.00006, 669.00006)
+scale = Vector2(1.5035214, 1.5035214)
 texture = ExtResource("1_nfggq")
 flip_h = true

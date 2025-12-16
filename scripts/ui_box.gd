@@ -20,6 +20,13 @@ var typing_speed := 0.03
 var choice_question_label : String = ""
 var choice_options: Array = []
 
+signal speaker_changed(speaker_name)
+
+func set_speaker_name(name: String) -> void:
+	if speaker_name.text != name:
+		speaker_name.text = name
+		emit_signal("speaker_changed", name)
+
 func _start_typewriter() -> void:
 	is_typing = true
 	dialogue.visible_characters = 0
@@ -148,7 +155,7 @@ func _show_current_line() -> void:
 		return
 
 	var entry: Dictionary = scene_data[current_index]
-	speaker_name.text = entry.get("speaker", "")
+	set_speaker_name(entry.get("speaker", ""))
 	dialogue.text = entry.get("text", "")
 	
 	_start_typewriter()
