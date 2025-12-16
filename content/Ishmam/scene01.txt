@@ -9,7 +9,7 @@ Well, amar ki ekta crash deoya uchit?
 > Yes | yes_storyline
 > No | no_storyline
 
-# Label yes_storyline
+# yes_storyline
 [Rehan]
 Hmm…. etai kora uchit.
 Eka jete to moja nei. 
@@ -30,3 +30,12 @@ Free aso ajke?
 Miyaaaaa, eta bolar kichu hoilo?
 Asho miya. 
 Age dekhi kori cholo miya.
+
+== end ==
+
+# no_storyline
+[Rehan]
+...
+
+[Hamza]
+sighhhh....

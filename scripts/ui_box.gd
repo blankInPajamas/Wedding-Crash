@@ -79,6 +79,9 @@ func open_file(path: String) -> void:
 			)
 			continue
 			
+		#if line == "== end ==":
+			#return
+		
 		# Dialogue line
 		if scene_name != "" and current_speaker != "":
 			scenes[scene_name].append({
@@ -188,8 +191,22 @@ func _input(event: InputEvent) -> void:
 			next_line()
 			
 func _on_choice_btn_pressed(val: int) -> void:
-	print(choice_options[val]['text'])
-	print(choice_options[val]['target'])
+	if val < 0 or val >= choice_options.size():
+		return
+
+	var target_scene: String = choice_options[val]["target"]
+
+	# Hide choice UI
+	choice_area.visible = false
+	dialogue_area.visible = true
+
+	# Clear choice state
+	choice_question_label = ""
+	choice_options.clear()
+	current_question = ""
+
+	# Jump to next logical scene
+	start_scene(target_scene)
 	
 	#var heading_scene: String = 
 

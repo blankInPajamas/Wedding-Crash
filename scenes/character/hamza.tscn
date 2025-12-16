@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://rps6qx4pohif"]
+
+[ext_resource type="Texture2D" uid="uid://fnmmvdyuxd5q" path="res://assets/sprites by judas la carotte/sprite3 happy small.png" id="1_nfggq"]
+
+[node name="Hamza" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nfggq")
