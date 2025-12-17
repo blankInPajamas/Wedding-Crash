@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://itollvglabwu"]
+[gd_scene load_steps=8 format=3 uid="uid://itollvglabwu"]
 
 [ext_resource type="PackedScene" uid="uid://bdj82l0e082yt" path="res://scenes/character/rehan.tscn" id="1_7vfua"]
 [ext_resource type="Script" uid="uid://bmfu53lyj448h" path="res://scripts/Ishmam/scene_001.gd" id="1_bcx4s"]
 [ext_resource type="PackedScene" uid="uid://c3my51g4up2c6" path="res://scenes/ui_box.tscn" id="2_lhqm4"]
 [ext_resource type="Texture2D" uid="uid://bxsqr3am78f1l" path="res://assets/background/bg001.jpg" id="4_x76ju"]
+[ext_resource type="FontFile" uid="uid://b4ybigsfc2cii" path="res://fonts/ace_attorney/Ace-Attorney.ttf" id="5_ojphq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xawwb"]
+bg_color = Color(0.10872076, 0.10872077, 0.10872071, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pxv5l"]
+font = ExtResource("5_ojphq")
+font_size = 120
 
 [node name="Scene001" type="Control"]
 layout_mode = 3
@@ -13,14 +21,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bcx4s")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
@@ -39,3 +39,24 @@ position = Vector2(965, 680)
 [node name="CharacterContainer" type="Node2D" parent="CanvasLayer"]
 
 [node name="UIBox" parent="CanvasLayer" instance=ExtResource("2_lhqm4")]
+
+[node name="Scene_intro" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Scene_intro"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xawwb")
+
+[node name="Label" type="Label" parent="Scene_intro/PanelContainer"]
+custom_minimum_size = Vector2(1500, 0)
+layout_mode = 2
+text = "Test"
+label_settings = SubResource("LabelSettings_pxv5l")
+horizontal_alignment = 1
+vertical_alignment = 1

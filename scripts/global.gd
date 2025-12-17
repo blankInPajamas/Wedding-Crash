@@ -5,6 +5,14 @@ var character_list = {
 	"Hamza": preload("res://scenes/character/hamza.tscn")
 }
 
+var scene_list = [
+	'res://content/Ishmam/scene01.txt',
+	'res://content/Ishmam/scene02.txt',
+]
+
+var scene_list_count: int = 0
+var scene_heading: String = ''
+
 var music_player: AudioStreamPlayer
 
 func _ready():

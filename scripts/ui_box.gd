@@ -85,8 +85,13 @@ func open_file(path: String) -> void:
 			)
 			continue
 			
+		if line.begins_with("$"):
+			Global.scene_heading = line.replace("$","").strip_edges()
+			print(Global.scene_heading)
+			continue
+			
 		#if line == "== end ==":
-			#return
+			#retu  ERROR: Another resource is loaded from path 'res://scenes/Ishmam_scenes/scene001.tscn::qfwbr' (possible cyclic resource inclusion).rn
 		
 		# Dialogue line
 		if scene_name != "" and current_speaker != "":
@@ -177,6 +182,7 @@ func _reset_scene() -> void:
 	current_index = 0
 	choice_question_label = ""
 	choice_options.clear()
+	Global.scene_list_count += 1
 	
 
 func _input(event: InputEvent) -> void:
@@ -192,6 +198,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton or event is InputEventScreenTouch or event.is_action_pressed("ui_accept"):
 		if is_typing:
 			dialogue.visible_characters = dialogue.get_total_character_count()
+			await get_tree().create_timer(0.5).timeout
 			is_typing = false
 		else:
 			next_line()
